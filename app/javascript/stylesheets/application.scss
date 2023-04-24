@@ -1,1 +1,14 @@
 @import './actiontext.scss';
+
+
+
+// css 
+.form-control.is-invalid {
+  /* 將 .form-control.is-invalid 的背景圖像設置為 none */
+  background-image: none;
+}
+
+.form-control.is-valid {
+  /* 將 .form-control.is-valid 的背景圖像設置為 none */
+  background-image: none;
+}

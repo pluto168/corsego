@@ -1,15 +1,23 @@
+<div class="container">
+  <%= simple_form_for(@course) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-<%= simple_form_for(@course) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <div class="form-inputs">
+      <%= f.input :title %>
+      <%= f.label :description %>
+      <%= f.rich_text_area :description %>
+      <small>
+        <%= f.error :description, class: 'text-danger' %>
+      </small>
+      <%= f.input :short_description %>
+      <%= f.input :language, collection: [ "English", "Japanese", "polish"] %>
+      <%= f.input :level, collection: [ "Beginner", "Intermediate", "Advanced"] %>
+      <%= f.input :price %>
+    </div>
 
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.label :description %>
-    <%= f.rich_text_area :description %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+</div>
