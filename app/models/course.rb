@@ -35,5 +35,9 @@ class Course < ApplicationRecord
     LEVELS.map { |level| [level, level] }
   end
 
-  
+  #public_activity
+  include PublicActivity::Model
+  # tracked
+  tracked owner: Proc.new{ |controller, model| controller.current_user }
+
 end
