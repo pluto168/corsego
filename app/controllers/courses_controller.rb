@@ -35,9 +35,8 @@ class CoursesController < ApplicationController
 
   # POST /courses or /courses.json
   def create
-    authorize @course
-
     @course = Course.new(course_params)
+    authorize @course  #順序有差
     @course.user = current_user
 
     respond_to do |format|

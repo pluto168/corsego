@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
+  after_action :user_activity
   
   #
   include PublicActivity::StoreController 
@@ -15,10 +16,14 @@ class ApplicationController < ActionController::Base
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   private
+  def user_activity
+    current_user.try :touch
+  end
 
   def user_not_authorized
     flash[:alert] = "You are not authorized to perform this action."
-    redirect_back(fallback_location: root_path)
+    # redirect_back(fallback_location: root_path)
+    redirect_to(request.referrer || root_path)
   end
   
 end
