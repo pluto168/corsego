@@ -13,7 +13,8 @@ class CoursesController < ApplicationController
     #   # @courses = @q.result(distinct: true)
     #   #@courses = @q.result.includes(:user)
     # end
-    @ransack_courses = Course.ransack(params[:courses_search], search_key: :courses_search)
+    
+    @ransack_courses = Course.ransack(params[:courses_search], search_key:  :courses_search)
     @courses = @ransack_courses.result.includes(:user)
   end
 
