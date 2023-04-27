@@ -44,5 +44,9 @@ class User < ApplicationRecord
       errors.add(:roles, "must have at least one role")
     end
   end
+
+  #
+  extend FriendlyId
+  friendly_id :email, use: :slugged
   
 end

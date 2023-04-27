@@ -1,7 +1,8 @@
 <div class="card">
   <div class="card-header">
     <div class="fa fa-user"></div>
-      <%= user.email %>
+      <%= link_to user.email, user_path(user) %>
+      <%#= user.email %>
   </div>
   <div class="card-footer">
     Signed up
