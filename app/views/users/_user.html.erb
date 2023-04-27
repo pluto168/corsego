@@ -32,4 +32,11 @@
       <div class="badge badge-danger">No</div>
     <% end %>
   </div>
+  <div class="card-footer">
+    <% user.roles.each do |role| %>
+      <div class="badge badge-info">
+        <%= role.name %>
+      </div>
+    <% end %>
+  </div>
 </div>
