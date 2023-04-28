@@ -20,6 +20,7 @@ class CoursesController < ApplicationController
 
   # GET /courses/1 or /courses/1.json
   def show
+    @lessons = @course.lessons
   end
 
   # GET /courses/new
@@ -30,7 +31,7 @@ class CoursesController < ApplicationController
 
   # GET /courses/1/edit
   def edit
-    
+    # authorize @course
   end
 
   # POST /courses or /courses.json
