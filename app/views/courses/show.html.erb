@@ -9,7 +9,8 @@
     <%= render 'courses/course', course: @course %>
   </div>
   <div class="col-lg-6">
-      <%= render partial: 'lessons/lesson', collection: @lessons  %>
-      <%#= render 'lessons/lesson', lesson: @lesson %>
+    <%= link_to 'Add lesson', new_lesson_path(course_id: @course.id) %>
+    <%= render partial: 'lessons/lesson', collection: @lessons  %>
+    <%#= render 'lessons/lesson', lesson: @lesson %>
   </div>
 </div>
