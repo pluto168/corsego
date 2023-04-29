@@ -9,6 +9,7 @@ class Course < ApplicationRecord
     title
   end
 
+  #text
   has_rich_text :description
 
   #

@@ -16,5 +16,7 @@ class Lesson < ApplicationRecord
     title
   end
 
-  
+  #text
+  has_rich_text :content
+
 end

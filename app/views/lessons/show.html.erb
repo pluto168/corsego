@@ -18,6 +18,13 @@
 <%#= link_to 'Edit', edit_lesson_path(@lesson) %> 
 <%#= link_to 'Back', lessons_path %>
 
+<p>
+  <%= link_to 'Courses', courses_path %>
+  /
+  <%= link_to @lesson.course.title, course_path(@lesson.course) %>
+  /
+  <%= link_to @lesson.title, lesson_path(@lesson) %>
+</p>
 
 <%= render 'lessons/lesson', lesson: @lesson %>
 <%#= link_to 'Back', lessons_path %>
