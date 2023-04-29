@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  resources :lessons
   devise_for :users
-  resources :courses
 
+  resources :courses do
+    resources :lessons
+  end
+  
   resources :users, only: [:index, :edit, :show, :update]
-
   
   #get 'static_pages/landing_pages'
   #get 'static_pages/privacy_policy'
