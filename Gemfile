@@ -36,6 +36,7 @@ gem 'ransack', '~> 3.2', '>= 3.2.1'
 gem 'public_activity', '~> 2.0', '>= 2.0.2'
 gem 'rolify', '~> 6.0', '>= 6.0.1'
 gem 'pundit', '~> 2.3'
+gem 'exception_notification', '~> 4.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
