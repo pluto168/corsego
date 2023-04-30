@@ -40,9 +40,13 @@
         <%= render 'courses/course', course: course %>
       <% end %>
     </div>
+    <%# Note the double equals sign "==" which marks the output as trusted and html safe: %>
+    <%#== pagy_nav(@pagy) %>
+    <%== pagy_bootstrap_nav(@pagy) %>
+    <%#== pagy_bootstrap_nav_js(@pagy) %>
+    <%#== pagy_bootstrap_combo_nav_js(@pagy) %>
   </div>
 </div>
-
 <br>
 
 

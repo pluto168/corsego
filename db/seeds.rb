@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #User.create!(email: 'admin@example.com', password: 'admin@example.com', password_confirmation: 'admin@example.com')
 
+# PublicActivity.enabled = false
 # 30.times do
 #   Course.create!([{
 #     title: Faker::Educator.course_name,
@@ -18,3 +19,5 @@
 #     price: Faker::Number.between(from: 1000, to: 20000)
 #   }])
 # end
+
+# PublicActivity.enabled = true
