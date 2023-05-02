@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable, :trackable, :confirmable
   
+  has_many :courses
+  has_many :enrollments
+  
   def to_s
     email
   end
@@ -14,8 +17,7 @@ class User < ApplicationRecord
     self.email.split(/@/).first
     # end
   end
-  
-  has_many :courses
+
   
   #
   rolify

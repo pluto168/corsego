@@ -4,6 +4,7 @@ class Course < ApplicationRecord
 
   belongs_to :user
   has_many :lessons, dependent: :destroy    #course刪除lessons也會被刪除
+  has_many :enrollments
 
   def to_s
     title
