@@ -18,6 +18,16 @@
 <%#= link_to 'Edit', edit_lesson_path(@lesson) %> 
 <%#= link_to 'Back', lessons_path %>
 
+<% content_for :title do %>
+  Corsego 
+  /
+  Course
+  <%= @course.title %>
+  /
+  Lesson
+  <%= @lesson.title %>
+<% end %>
+
 <p>
   <%= link_to 'Courses', courses_path %>
   /
