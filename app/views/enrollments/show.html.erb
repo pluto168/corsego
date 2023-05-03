@@ -1,29 +1,37 @@
-<p id="notice"><%= notice %></p>
+<%= render 'enrollments/enrollment', enrollment: @enrollment %>
 
-<p>
-  <strong>Course:</strong>
-  <%= @enrollment.course %>
-</p>
 
-<p>
-  <strong>User:</strong>
-  <%= @enrollment.user %>
-</p>
+<%# <p id="notice"> %>
+  <%#= notice  %>
+<%# </p> %>
 
-<p>
-  <strong>Rating:</strong>
-  <%= @enrollment.rating %>
-</p>
+<%# <p> %>
+  <%# <strong>Course:</strong> %>
+  <%#= @enrollment.course %>
+<%# </p> %>
 
-<p>
-  <strong>Review:</strong>
-  <%= @enrollment.review %>
-</p>
+<%# <p> %>
+  <%# <strong>User:</strong> %>
+  <%#= @enrollment.user %>
+<%# </p> %>
 
-<p>
-  <strong>Price:</strong>
-  <%= @enrollment.price %>
-</p>
+<%# <p> %>
+  <%# <strong>Rating:</strong> %>
+  <%#= @enrollment.rating %>
+<%# </p> %>
 
-<%= link_to 'Edit', edit_enrollment_path(@enrollment) %> |
-<%= link_to 'Back', enrollments_path %>
+<%# <p> %>
+  <%# <strong>Review:</strong> %>
+  <%#= @enrollment.review %>
+<%# </p> %>
+
+<%# <p> %>
+  <%# <strong>Price:</strong> %>
+  <%#= @enrollment.price %>
+<%# </p> %>
+
+<%#= link_to 'Edit', edit_enrollment_path(@enrollment) %> 
+<%# | %>
+<%#= link_to 'Back', enrollments_path %>
+
+
