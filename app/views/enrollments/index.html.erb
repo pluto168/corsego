@@ -15,6 +15,20 @@
 </h3>
 <p></p>
 
+<div class="form-inline">
+  <%= search_form_for @q do |f| %>
+    <%= f.search_field :user_email_cont, placeholder: 'user email' %>
+    <%= f.search_field :course_title_cont, placeholder: 'course title' %>
+    <%= f.search_field :price_eq, placeholder: 'price' %>
+    <%= f.search_field :rating_eq, placeholder: 'rating' %>
+    <%= f.search_field :review_cont, placeholder: 'review' %>
+    <%= f.submit %>
+  <%end%>
+</div>
+<div class="ml-2">
+  <%= link_to 'refresh', enrollments_path %>
+</div>
+
 <div class="table-responsive">
   <table class="table table-bordered table-striped table-sm">
     <thead>
@@ -23,29 +37,36 @@
           ID
         </th>
         <th>
-          <div class="fa fa-user"></div>
-          User
+          <%# <div class="fa fa-user"></div> %>
+          <%# User %>
+          <%= sort_link(@q, :user_email) %>
         </th>
         <th>
-          <div class="fa fa-clock"></div>
-          <div class="fa fa-lock-open"></div>
-          bought
+          <%# <div class="fa fa-clock"></div> %>
+          <%# <div class="fa fa-lock-open"></div> %>
+          <%# bought %>
+          <%= sort_link(@q, :created_at) %>
         </th>
         <th>
-          <div class="fa fa-graduation-cap"></div>
-          Course
+          <%# <div class="fa fa-graduation-cap"></div> %>
+          <%# Course %>
+          <%= sort_link(@q, :course_title) %>
         </th>
         <th>
-          <div class="fa fa-dollar-sign"></div>
-          Price
+          <%# <div class="fa fa-dollar-sign"></div> %>
+          <%# Price %>
+          <%= sort_link(@q, :price) %>
         </th>
         <th>
           <div class="text-warning fa fa-clock"></div>
+          <div class="row"></div>
           Reviewed on
+          <%= sort_link(@q, :updated_at) %>
         </th>
         <th>
           <div class="text-warning fa fa-star"></div>
-          Rating
+          <%= sort_link(@q, :rating) %>
+          <%# Rating %>
         </th>
         <th>
           <div class="text-warning fa fa-comment"></div>
