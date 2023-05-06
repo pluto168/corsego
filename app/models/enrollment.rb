@@ -6,21 +6,21 @@ class Enrollment < ApplicationRecord
 
 
   #
-  # validates_presence_of :rating, if: :review?
-  # validates_presence_of :review, if: :rating?
+  validates_presence_of :rating, if: :review?
+  validates_presence_of :review, if: :rating?
   
-  validates :rating, presence: true, if: -> { review.present? }
-  validates :review, presence: true, if: -> { rating.present? }
+  # validates :rating, presence: true, if: -> { review.present? }
+  # validates :review, presence: true, if: -> { rating.present? }
 
   
-  #驗證rating跟review兩者不能同時為空
-  validate :rating_or_review_presence
+  # 驗證rating跟review兩者不能同時為空
+  # validate :rating_or_review_presence
 
-  def rating_or_review_presence
-    if rating.blank? && review.blank?
-      errors.add(:base, "Please provide a rating or a review")
-    end
-  end
+  # def rating_or_review_presence
+  #   if rating.blank? && review.blank?
+  #     errors.add(:base, "Please provide a rating or a review")
+  #   end
+  # end
 
   #
   validates_uniqueness_of :user_id, scope: :course_id  
