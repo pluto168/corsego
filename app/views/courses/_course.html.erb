@@ -24,12 +24,16 @@
     </b>
     <%# Enrollments count: %>
     <%#= course.enrollments.count %>
-    Counter cache enrollments count:
-    <%= course.enrollments_count %>
+    <%# Counter cache enrollments count: %>
+    <%#= course.enrollments_count %>
+    (
+      <div class="fa fa-user-graduate"></div>
+      <%= course.enrollments_count %>
+    )
   </div>
   <div class="card-footer">
     <div class="fa fa-tasks"></div>
-    <%= course.lessons.count %>
+    <%= course.lessons_count %>
   </div>
   <div class="card-footer">
     <div class="row">

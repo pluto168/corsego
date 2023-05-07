@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable, :trackable, :confirmable
   
-  has_many :courses
+  has_many :courses, counter_cache: true
   has_many :enrollments
   
   def to_s

@@ -34,4 +34,8 @@ class CoursePolicy < ApplicationPolicy
     # @user.has_role?(:admin) || @record.user_id == @user.id
     @user.has_role?(:admin) || @record.user == @user
   end
+
+  def owner?
+    @record.user == @user      #只有user自己可以用
+  end
 end

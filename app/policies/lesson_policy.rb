@@ -30,4 +30,5 @@ class LessonPolicy < ApplicationPolicy
   def destroy?
     @user.has_role?(:admin) || @record.course.user_id == @user.id
   end
+  
 end
