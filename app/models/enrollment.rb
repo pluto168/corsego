@@ -37,6 +37,17 @@ class Enrollment < ApplicationRecord
   #
   extend FriendlyId
   friendly_id :to_s, use: :slugged
+
+  #average_rating
+  after_save do
+    unless rating.nil? || rating.zero?
+      course.update_rating
+    end
+  end
+
+  after_destroy do
+    course.update_rating
+  end
   
   #
   def to_s
