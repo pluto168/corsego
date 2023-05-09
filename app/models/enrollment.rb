@@ -38,6 +38,7 @@ class Enrollment < ApplicationRecord
 
   #static_pages
   scope :reviewed, -> { where.not(review: [0, nil, ""]) }
+  scope :latest_good_reviews, -> { order(rating: :desc, created_at: :desc).limit(3) }
 
   #
   extend FriendlyId

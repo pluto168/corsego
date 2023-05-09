@@ -77,7 +77,6 @@
   </div>
 </div>
 
-
 <hr/>
 <h2>
   <div class="fa fa-user-graduate"></div>
@@ -92,10 +91,10 @@
 <hr/>
 <h2>
   <div class="fa fa-chart-line"></div>
-  Popular courses
+  Popular courses 熱門課程
 </h2>
   <div class="card-columns">
-    <% @popular_courses.each do |course| %>
+    <% @popular.each do |course| %>
       <%= render 'courses/course', course: course %>
     <% end %>
   </div>
@@ -103,10 +102,10 @@
 <hr/>
 <h2>
   <div class="fa fa-star"></div>
-  Top rated courses
+  Top rated courses 評分最高的課程
 </h2>
   <div class="card-columns">
-    <% @top_rated_courses.each do |course| %>
+    <% @top_rated.each do |course| %>
       <%= render 'courses/course', course: course %>
     <% end %>
   </div>
@@ -114,10 +113,10 @@
 <hr/>
 <h2>
   <div class="fa fa-clock"></div>
-  Latest courses
+  Latest courses 最新課程
 </h2>
   <div class="card-columns">
-    <% @latest_couses.each do |course| %>
+    <% @latest.each do |course| %>
       <%= render 'courses/course', course: course %>
     <% end %>
   </div>
