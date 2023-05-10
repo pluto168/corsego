@@ -6,8 +6,12 @@ class Course < ApplicationRecord
   belongs_to :user, counter_cache: true
   #User.find_each { |user| User.reset_counters(user.id, :courses) }  
   
-  has_many :lessons, dependent: :destroy    #course刪除lessons也會被刪除
+  #course刪除lessons也會被刪除
+  has_many :lessons, dependent: :destroy    
+  
   has_many :enrollments
+
+  has_many :user_lessons, through: :lessons
   
   #
   scope :latest, -> { limit(3).order(created_at: :desc) }
@@ -62,6 +66,12 @@ class Course < ApplicationRecord
       update_column :average_rating, (enrollments.average(:rating).round(2).to_f)
     else
       update_column :average_rating, (0)
+    end
+  end
+
+  def progress(user)
+    unless self.lessons_count == 0
+      user_lessons.where(user: user).count/self.lessons_count.to_f*100
     end
   end
 
