@@ -4,11 +4,23 @@
   <%= @course.title %>
 <% end %>
 
-<p>
+<%# <p> %>
+  <%#= link_to 'Courses', courses_path %>
+  <%# / %>
+  <%#= link_to @course.title, course_path(@course) %>
+<%# </p> %>
+
+<div>
   <%= link_to 'Courses', courses_path %>
   /
-  <%= link_to @course.title, course_path(@course) %>
-</p>
+  <%= link_to course_path(@course) do %>
+    <div class="fa fa-graduation-cap"></div>
+    <%= @course.title %>
+  <% end %>
+</div>
+
+<P></P>
+
 
 <div class="row">
   <div class="col-lg-8 order-1 order-lg-1">
@@ -45,7 +57,9 @@
     <ul class="list-group">
       <%#= render partial: 'lessons/lesson', collection: @lessons  %>
       <% @lessons.each do |lesson| %>
-        <%= render 'lessons/lesson_preview', lesson: lesson %>
+        <li class="list-group-item">
+          <%= render 'lessons/lesson_preview', lesson: lesson %>
+        </li>
       <% end %>
     </ul>
     <p></p>
