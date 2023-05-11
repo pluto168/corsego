@@ -9,7 +9,7 @@ class Course < ApplicationRecord
   #course刪除lessons也會被刪除
   has_many :lessons, dependent: :destroy    
   
-  has_many :enrollments
+  has_many :enrollments, dependent: :restrict_with_error
 
   has_many :user_lessons, through: :lessons
   
