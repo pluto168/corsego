@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   
   # get "static_pages/activity"
   get "activity", to: "static_pages#activity"
+  
+  get 'analytics', to: 'static_pages#analytics'
+
   get "static_pages/landing_pages"
   get "privacy_policy", to: "static_pages#privacy_policy"
   
