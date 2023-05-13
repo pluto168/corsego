@@ -10,13 +10,15 @@ class CoursePolicy < ApplicationPolicy
     # @user.has_role?:admin || @record.user = @user
     # @user.has_role?(:admin) || @record.user = @user
     # @user.has_role?(:admin) || @record.user_id == @user.id
-    @user.has_role?(:admin) || @record.user == @user
+    # @user.has_role?(:admin) || @record.user == @user
+    @record.user == @user
   end
 
   def update?
     # @user.has_role?(:admin) || @record.user = @user
     # @user.has_role?(:admin) || @record.user_id == @user.id
-    @user.has_role?(:admin) || @record.user == @user
+    # @user.has_role?(:admin) || @record.user == @user
+    @record.user == @user
   end
 
   def new?
@@ -33,6 +35,10 @@ class CoursePolicy < ApplicationPolicy
     # @user.has_role?(:admin) || @record.user = @user
     # @user.has_role?(:admin) || @record.user_id == @user.id
     @user.has_role?(:admin) || @record.user == @user
+  end
+
+  def approve?
+    @user.has_role?(:admin)
   end
 
   def owner?

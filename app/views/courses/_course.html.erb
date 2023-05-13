@@ -85,6 +85,29 @@
         <%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
       </div>
     <% end %>
+    <% if policy(course).destroy? %>
+      <div class="card-footer">
+        <% if course.published? %>
+          <div class="badge badge-success">published</div>
+        <% else %>
+          <div class="badge badge-danger">unpublished</div>
+        <% end %>
+        <% if course.approved? %>
+          <div class="badge badge-success">approved</div>
+        <% else %>
+          <div class="badge badge-danger">unapproved</div>
+        <% end %>
+      </div>
+    <% end %>
+    <% if policy(course).approve? %>
+      <div class="card-footer">
+        <% if course.approved? %>
+          <%= link_to 'unapprove', unapprove_course_path(course), method: :patch, class: 'btn btn-sm btn-danger' %>
+        <% else %>
+          <%= link_to 'approve', approve_course_path(course), method: :patch, class: 'btn btn-sm btn-success' %>
+        <% end %>
+      </div>
+    <% end %>
   <% end %>
 </div>
 
