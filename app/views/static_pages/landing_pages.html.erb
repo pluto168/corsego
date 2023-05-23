@@ -82,12 +82,15 @@
 <% if current_user %>
   <h2>
     <div class="fa fa-user-graduate"></div>
-    Continue Learning
+    Continue Learning 持續學習
   </h2>
     <div class="card-columns">
       <% @purchased_courses.each do |course| %>
         <%= render 'courses/course', course: course %>
       <% end %>
+    </div>
+    <div class="text-right">
+      <%= link_to 'All my purchased courses', purchased_courses_path %>
     </div>
     <hr/>
 <% end %>
@@ -102,6 +105,9 @@
       <%= render 'courses/course', course: course %>
     <% end %>
   </div>
+  <div class="text-right">
+    <%= link_to 'More popular courses', courses_path(courses_search: {s: 'enrollments_count desc'}) %>
+  </div>
 
 <hr/>
 <h2>
@@ -113,6 +119,10 @@
       <%= render 'courses/course', course: course %>
     <% end %>
   </div>
+  <div class="text-right">
+    <%= link_to 'Best rated courses', courses_path(courses_search: {s: 'average_rating desc'}) %>
+  </div>
+
 
 <hr/>
 <h2>
@@ -124,17 +134,20 @@
       <%= render 'courses/course', course: course %>
     <% end %>
   </div>
+  <div class="text-right">
+    <%= link_to 'More new courses', courses_path(courses_search: {s: 'created_at desc'}) %>
+  </div>
 
-  <hr/>
-  <h2>
-    <div class="fa fa-comment"></div>
-    What our students have to say
-  </h2>
-    <div class="card-columns">
-      <% @latest_good_reviews.each do |enrollment| %>
-        <%= render 'enrollments/enrollment', enrollment: enrollment %>
-      <% end %>
-    </div>
+<hr/>
+<h2>
+  <div class="fa fa-comment"></div>
+  What our students have to say
+</h2>
+  <div class="card-columns">
+    <% @latest_good_reviews.each do |enrollment| %>
+      <%= render 'enrollments/enrollment', enrollment: enrollment %>
+    <% end %>
+  </div>
 
 <hr/>
 

@@ -22,9 +22,10 @@
   <%= search_form_for @q, url: @ransack_path do |f| %>
     <%= f.search_field :user_email_cont, placeholder: 'user email' %>
     <%= f.search_field :course_title_cont, placeholder: 'course title' %>
+    <%= f.search_field :course_user_email_cont, placeholder: 'teacher' %>
     <%= f.search_field :price_eq, placeholder: 'price' %>
     <%= f.search_field :rating_eq, placeholder: 'rating' %>
-    <%= f.search_field :review_cont, placeholder: 'review' %>
+    <%#= f.search_field :review_cont, placeholder: 'review' %>
     <%= f.submit %>
   <%end%>
 </div>
@@ -37,9 +38,9 @@
   <table class="table table-bordered table-striped table-sm">
     <thead>
       <tr>
-        <th>
+        <%# <th>
           ID
-        </th>
+        </th> %>
         <th>
           <%# <div class="fa fa-user"></div> %>
           <%# User %>
@@ -57,24 +58,27 @@
           <%= sort_link(@q, :course_title, "Course") %>
         </th>
         <th>
+          Thacher
+        </th>
+        <th>
           <%# <div class="fa fa-dollar-sign"></div> %>
           <%# Price %>
           <%= sort_link(@q, :price) %>
         </th>
         <th>
-          <div class="text-warning fa fa-clock"></div>
-          <div class="row"></div>
-          Reviewed on
           <%= sort_link(@q, :updated_at) %>
+          <div class="row"></div>
+          <div class="text-warning fa fa-clock"></div>
+          Reviewed on
         </th>
         <th>
-          <div class="text-warning fa fa-star"></div>
           <%= sort_link(@q, :rating) %>
+          <div class="text-warning fa fa-star"></div>
           <%# Rating %>
         </th>
         <th>
-          <div class="text-warning fa fa-comment"></div>
           Review
+          <div class="text-warning fa fa-comment"></div>
         </th>
         <th>Progress</th>
         <th colspan="3"></th>
