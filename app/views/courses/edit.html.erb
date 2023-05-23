@@ -5,6 +5,18 @@
   <%= @course.title %>
 <% end %>
 
+<%= link_to 'Courses', courses_path %>
+|
+<%= link_to course_path(@course) do %>
+  <div class="fa fa-graduation-cap"></div>
+  <%= @course.title %>
+  |
+<% end %>
+<%= link_to edit_course_path(@course) do %>
+  Edit
+<% end %>
+
+
 <div class="card">
   <div class="card-header">
     <h3>

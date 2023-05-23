@@ -1,21 +1,21 @@
 <div class="card">
   <div class="card-header">
     <% if lesson.viewed(current_user) == true %>
-      <div class="text-success far fa-check-square"></div>
+      <div class="text-success fa fa-check-square"></div>
       <%# VIEWED %>
     <% else %>
-      <div class="text-danger far fa-check-square"></div>
+      <div class="text-danger fa fa-check-square"></div>
       <%# NOT VIEWED %>
     <% end %>
     <%# <div class="far fa-check-square"></div> %>
     <%= link_to lesson.title, course_lesson_path(@course, lesson) %>
   </div>
-  <% if policy(lesson).show? %>
-    <div class="card-body">
-      <%= lesson.content %>
-      <%#= lesson.course %>
-    </div>
-  <% end %>
+  <%# if policy(lesson).show? %>
+  <div class="card-body">
+    <%= lesson.content %>
+    <%#= lesson.course %>
+  </div>
+  <%# end %>
   <% if policy(lesson).edit? %>
     <div class="card-footer">
       <%= link_to 'Edit', edit_course_lesson_path(@course, lesson), class: 'btn btn-sm btn-warning' %>

@@ -118,9 +118,9 @@
                     <%= current_user.courses_count %>
                   </div>
                 <% end %>
-                <%= link_to my_students_enrollments_path, class: "dropdown-item" do %>
+                <%= link_to my_enrollments_path, class: "dropdown-item" do %>
                   <div class="fa fa-lock-open"></div>
-                  My Students
+                  My enrollments
                   <div class="badge badge-danger">
                     <%= Enrollment.joins(:course).where(courses: {user: current_user}).count %>
                   </div>
@@ -183,6 +183,7 @@
         <li class="nav-item dropdown">
           <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">
             <b>
+              <div class="fa fa-user"></div>
               <%= current_user.username %>
             </b>
           </a>

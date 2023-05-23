@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   resources :enrollments do
-    get :my_students, on: :collection
+    get :my, on: :collection
   end
   
   devise_for :users
@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :courses do
     get :purchased, :pending_review, :created, :unapproved, on: :collection
     member do
+      get :analytics
       patch :approve
       patch :unapprove
     end
@@ -38,10 +39,10 @@ Rails.application.routes.draw do
   end
 
 
+  root "static_pages#landing_pages"
   get "static_pages/landing_pages"
   get "privacy_policy", to: "static_pages#privacy_policy"
   
-  root "static_pages#landing_pages"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routi ng.html
 
 
