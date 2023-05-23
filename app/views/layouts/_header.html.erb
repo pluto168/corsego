@@ -85,7 +85,7 @@
                     <%= current_user.enrollments_count %>
                   </div>
                 <% end %>
-                <%= link_to learning_courses_path, class: "dropdown-item" do %>
+                <%= link_to pending_review_courses_path, class: "dropdown-item" do %>
                   <div class="fa fa-star"></div>
                   Pending Review
                   <div class="badge badge-danger">
@@ -109,11 +109,11 @@
                   <%# <div class="fa fa-graduation-cap"></div> %>
                   <i class="fas fa-school"></i>
                   <div class="fa fa-plus"></div>
-                  New Course
+                  Create Course
                 <% end %>
-                <%= link_to created_courses_path, class: "dropdown-item" do %>
+                <%= link_to teaching_courses_path, class: "dropdown-item" do %>
                   <div class="fa fa-graduation-cap"></div>
-                  Created Courses
+                  My Courses
                   <div class="badge badge-danger">
                     <%= current_user.courses_count %>
                   </div>
