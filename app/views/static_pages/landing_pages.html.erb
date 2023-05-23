@@ -79,7 +79,7 @@
 
 <p></p>
 
-<% if current_user %>
+<% if current_user && current_user.enrollments.any? %>
   <h2>
     <div class="fa fa-user-graduate"></div>
     Continue Learning 持續學習
@@ -90,7 +90,7 @@
       <% end %>
     </div>
     <div class="text-right">
-      <%= link_to 'All my purchased courses', purchased_courses_path %>
+      <%= link_to 'All my purchased courses', learning_courses_path %>
     </div>
     <hr/>
 <% end %>
