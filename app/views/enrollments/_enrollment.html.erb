@@ -1,7 +1,11 @@
 <div class="card">
   <div class="card-header">
     <div class="fa fa-user"></div>
-    <%= link_to enrollment.user.username, user_path(enrollment.user) %>
+    <% if current_user && current_user == enrollment.user %>
+      <%= link_to enrollment.user.username, user_path(enrollment.user) %>
+    <% else %>
+      <%= enrollment.user.username %>
+    <% end %>
     <div class="fa fa-clock"></div>
     <%= time_ago_in_words(enrollment.updated_at) %>
     <div class="fa fa-graduation-cap"></div>

@@ -70,7 +70,12 @@
       <div class="col-md-6">
         <div class="text-right">
           <div class="fa fa-chalkboard-teacher"></div>
-          <%= link_to course.user.username, user_path(course.user) %>
+          by
+          <% if current_user && current_user == course.user %>
+            <%= link_to course.user.username, user_path(course.user) %>
+          <% else %>
+            <%= course.user.username %>
+          <% end %>
         </div>
       </div>
     </div>

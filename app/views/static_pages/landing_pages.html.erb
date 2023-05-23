@@ -42,10 +42,13 @@
     <h1>
       <div class="fa fa-graduation-cap"></div>
     </h1>
-    <%= Course.count %>
-    online courses
+    <%= pluralize(Course.count, 'online courses') %>
+    <%#= Course.count %>
+    <%# online courses %>
     <div class="row"></div>
-    Explore a variety of fresh topics
+    <small>
+      Explore a variety of fresh topics
+    </small>
   </div>
   <div class="card card-body">
     <h1>
@@ -53,19 +56,25 @@
       <!--.fa.fa-brain
       -->
     </h1>
-    <%= Course.distinct.count(:user_id) %>
-    expert instructors
+    <%= pluralize(Course.distinct.count(:user_id), 'expert instructors') %>
+    <%#= Course.distinct.count(:user_id) %>
+    <%# expert instructors %>
     <div class="row"></div>
-    Find the right instructor for you
+    <small>
+      Find the right instructor for you
+    </small>
   </div>
   <div class="card card-body">
     <h1>
       <div class="fa fa-user-graduate"></div>
     </h1>
-    <%= User.count %>
-    active learners
+    <%= pluralize(User.count, 'active learners') %>
+    <%#= User.count %>
+    <%# active learners %>
     <div class="row"></div>
-    Join the knowledge sharing community
+    <small>
+      Join the knowledge sharing community
+    </small>
   </div>
   <div class="card card-body">
     <h1>
@@ -73,7 +82,9 @@
     </h1>
     Lifetime access
     <div class="row"></div>
-    Learn on your schedule
+    <small>
+      Learn on your schedule
+    </small>
   </div>
 </div>
 
@@ -135,7 +146,7 @@
     <% end %>
   </div>
   <div class="text-right">
-    <%= link_to 'More new courses', courses_path(courses_search: {s: 'created_at desc'}) %>
+    <%= link_to 'More recent courses', courses_path(courses_search: {s: 'created_at desc'}) %>
   </div>
 
 <hr/>

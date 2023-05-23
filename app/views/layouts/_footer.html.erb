@@ -3,24 +3,32 @@
   <div class="container">
     <div class="row">
       <div class="col-md-4">
-        Copyright
-        ©
-        <%= Time.now.year %>
-        CoursePlatform Sp. z o.o.
+        <%= link_to 'Teach on Corsego', new_course_path, style: 'color: white'; %>
         <div class="row"></div>
-        <div class="fa fa-envelope"></div>
-        <%= mail_to 'video@mail.com' %>
+          Corsego for business
         <div class="row"></div>
+          About us
       </div>
       <div class="col-md-4">
         Privacy policy
         <div class="row"></div>
         Terms and conditions
+        <div class="row"></div>
+        Careers
+        <div class="row"></div>
+        Help and Support
+        <div class="row"></div>
+        Blog
       </div>
       <div class="col-md-4">
-        About us
+        <%# About us %>
+        Copyright
+        © 
+        <%= Time.now.year %>
+        Corsego Sp. z o.o.
         <div class="row"></div>
-        <%= link_to 'Teach on CoursePlatform', new_course_path %>
+        <div class="fa fa-envelope"></div>
+        <%= mail_to 'video@mail.com' %>
       </div>
     </div>
   </div>

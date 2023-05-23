@@ -83,9 +83,9 @@
         </td>
         <td>
           <% if user.online? %>
-            <div class="text-success far fa-circle"></div>
+            <div class="text-success fa fa-signal"></div>
           <% else %>
-            <div class="text-danger far fa-circle"></div>
+            <div class="text-danger fa fa-signal"></div>
           <% end %>
           <%= link_to user.email, user_path(user) %>
         </td>
