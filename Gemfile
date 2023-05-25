@@ -41,6 +41,7 @@ gem 'pagy', '~> 6.0', '>= 6.0.3'
 gem 'chartkick', '~> 5.0', '>= 5.0.2'
 gem 'groupdate', '~> 6.2', '>= 6.2.1'
 gem 'rails-erd', group: :development
+gem 'ranked-model', '~> 0.4.8'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
