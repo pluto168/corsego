@@ -41,7 +41,7 @@ class CoursePolicy < ApplicationPolicy
   def destroy?
     # @user.has_role?(:admin) || @record.user = @user
     # @user.has_role?(:admin) || @record.user_id == @user.id
-    @user.has_role?(:admin) || @record.user == @user
+    @record.user == @user && @record.enrollments.none?
     # @record.user == @user
   end
 
@@ -51,5 +51,9 @@ class CoursePolicy < ApplicationPolicy
 
   def owner?
     @record.user == @user      #只有user自己可以用
+  end
+
+  def admin_or_owner?
+    @user.has_role?(:admin) || @record.user == @user
   end
 end
